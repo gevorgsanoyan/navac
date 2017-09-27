@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div>
+        <table border="1" cellpadding="10">
+        {% for s in sPF %}
+            <tr>
+                <td>{{ s.id }}</td>
+                <td>{{ s.stockId }}</td>
+                <td>{{ s.pfDate }}</td>
+                <td>
+                    <a class="btn btn-default" href="{% url 'spfedit' spfId=s.id %}">Edit</a>
+                </td>
+                <td>
+                    <a class="btn btn-default" href="{% url 'spfinput' sId=s.stockId.id %}">Add New</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+    <div>
+
+    </div>
+{% endblock content %}

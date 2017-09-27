@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Select portfolio manager for cash transactions</h1>
+    <div>
+        <table border="1" cellpadding="10">
+        {% for pm in pmList %}
+            <tr>
+                <td>{{ pm.id }}</td>
+                <td>{{ pm.pmName }}</td>
+                <td>{{ pm.pmAutorPerson }}</td>
+                <td>
+                    <a class="btn btn-default" href="{% url 'cfinput' pmId=pm.id %}">Select</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+{% endblock content %}

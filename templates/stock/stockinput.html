@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Stock description</h1>
+    <div>
+        <form method="POST" class="post-form">{% csrf_token %}
+            {{ stockform.as_p }}
+            <button type="submit" class="save btn btn-default">Save</button>
+        </form>
+    </div>
+    <div>
+        <a class="btn btn-default" href="{% url 'stlist' %}">Back to list</a>
+    </div>
+{% endblock content %}

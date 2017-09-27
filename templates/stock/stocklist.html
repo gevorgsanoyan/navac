@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div>
+        <table border="1" cellpadding="10">
+        {% for s in stock %}
+            <tr>
+                <td>{{ s.id }}</td>
+                <td>{{ s.stockName }}</td>
+                <td>{{ s.sType }}</td>
+                <td>{{ s.NYSEexchCode }}</td>
+                <td>{{ s.NASDAQexchCode }}</td>
+                <td>{{ s.otherExchCode }}</td>
+                <td>
+                    <a class="btn btn-default" href="{% url 'stedit' sId=s.id %}">View/Edit</a>
+                </td>
+                <td>
+                    <a class="btn btn-default" href="{% url 'spflist' sId=s.id %}">Stocks PF Dates</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+    <div>
+        <a class="btn btn-default" href="{% url 'stnew' %}">Add New</a>
+    </div>
+{% endblock content %}

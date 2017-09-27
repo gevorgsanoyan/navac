@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div>
+        <table border="1" cellpadding="10">
+        {% for cf in cflist %}
+            <tr>
+                <td>{{ cf.cfDate }}</td>
+                <td>{{ cf.pmId }}</td>
+                <td>{{ cf.baId }}</td>
+                <td>{{ cf.transType }}</td>
+                <td>{{ cf.cfAmount }}</td>
+                <td>{{ cf.currency }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+{% endblock content %}
